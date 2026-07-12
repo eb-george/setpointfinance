@@ -13,7 +13,6 @@
       --parchment-mid: #EAE3D5;
       --near-black: #1A1814;
       --sienna: #B85C38;
-      --terracotta: #D4795A;
       --muted: #5a544a;
       --light-muted: #8a7e6e;
       --border: #e0d8ce;
@@ -21,6 +20,12 @@
     }
 
     html { scroll-behavior: smooth; }
+
+    .wrap {
+      max-width: 1320px;
+      margin: 0 auto;
+      width: 100%;
+    }
 
     body {
       font-family: 'DM Sans', sans-serif;
@@ -42,6 +47,11 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      transition: box-shadow 0.2s ease;
+    }
+
+    nav.is-scrolled {
+      box-shadow: 0 2px 14px rgba(26, 24, 20, 0.06);
     }
 
     .nav-logo {
@@ -68,7 +78,7 @@
 
     .nav-wordmark-main {
       font-family: 'Syne', sans-serif;
-      font-size: 17px;
+      font-size: 21px;
       font-weight: 500;
       color: var(--near-black);
       letter-spacing: -0.02em;
@@ -76,7 +86,7 @@
     }
 
     .nav-wordmark-sub {
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 400;
       color: var(--light-muted);
       letter-spacing: 0.1em;
@@ -112,14 +122,21 @@
 
     /* HERO */
     .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 520px;
+      display: flex;
+      justify-content: center;
       background: var(--parchment);
     }
 
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      min-height: 520px;
+      width: 100%;
+      max-width: 1600px;
+    }
+
     .hero-left {
-      padding: 5rem 4rem 4rem;
+      padding: 5rem 2.75rem 4rem 4rem;
       border-right: 0.5px solid var(--border);
       display: flex;
       flex-direction: column;
@@ -151,10 +168,10 @@
 
     .hero-headline {
       font-family: 'Syne', sans-serif;
-      font-size: 38px;
+      font-size: 31px;
       font-weight: 500;
       letter-spacing: -0.025em;
-      line-height: 1.15;
+      line-height: 1.2;
       margin-bottom: 1.75rem;
     }
 
@@ -249,20 +266,6 @@
       margin-top: 2rem;
       padding-left: 14px;
       border-left: 2px solid var(--sienna);
-    }
-
-    /* TRANSITION */
-    .transition-bar {
-      background: var(--parchment-mid);
-      padding: 0.85rem 4rem;
-      border-top: 0.5px solid var(--border-mid);
-      border-bottom: 0.5px solid var(--border-mid);
-      text-align: center;
-    }
-
-    .transition-bar p {
-      font-size: 13px;
-      color: var(--light-muted);
     }
 
     /* SECTIONS */
@@ -402,6 +405,21 @@
       border-top: 0.5px solid var(--border);
     }
 
+    .bio-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--near-black);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.25rem;
+    }
+
+    .bio-title {
+      font-size: 13px;
+      color: var(--light-muted);
+      letter-spacing: 0.02em;
+    }
+
     .about-bio-para {
       font-size: 15px;
       color: var(--muted);
@@ -428,7 +446,7 @@
     /* FOOTER */
     footer {
       background: var(--near-black);
-      padding: 8rem 4rem;
+      padding: 5rem 4rem;
       text-align: center;
     }
 
@@ -500,7 +518,7 @@
     @media (max-width: 960px) {
       nav { padding: 1.1rem 2rem; }
 
-      .hero {
+      .hero-inner {
         grid-template-columns: 1fr;
         min-height: 0;
       }
@@ -512,7 +530,6 @@
       .hero-right { padding: 2.5rem 2rem 3rem; }
 
       .section-warm, .section-light { padding: 3rem 2rem; }
-      .transition-bar { padding: 0.85rem 2rem; }
 
       .steps-grid { grid-template-columns: 1fr; }
       .included-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -544,7 +561,6 @@
       .familiar-item p { font-size: 16px; }
 
       .section-warm, .section-light { padding: 2.5rem 1.25rem; }
-      .transition-bar { padding: 0.85rem 1.25rem; }
       .section-headline { font-size: 24px; }
       .section-header { margin-bottom: 2.5rem; }
 
@@ -565,10 +581,11 @@
 <body>
 
   <nav>
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;">
     <a href="#" class="nav-logo">
       <div class="nav-wordmark">
         <div class="nav-wordmark-lockup">
-          <span class="nav-wordmark-main">Setpoint</span><svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-dot"><circle cx="4.5" cy="4.5" r="3.7" fill="none" stroke="#B85C38" stroke-width="1.1"/><circle cx="4.5" cy="4.5" r="1.3" fill="#B85C38"/></svg>
+          <span class="nav-wordmark-main">Setpoint</span><svg width="10" height="10" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-dot"><circle cx="4.5" cy="4.5" r="3.2" fill="#B85C38"/></svg>
         </div>
         <span class="nav-wordmark-sub">Finance</span>
       </div>
@@ -580,9 +597,11 @@
       <a href="#about">About</a>
       <span class="nav-cta"><a href="https://calendly.com/eric-setpointfinance/30min" target="_blank" rel="noopener">Schedule a call →</a></span>
     </div>
+    </div>
   </nav>
 
   <section class="hero">
+    <div class="hero-inner">
     <div class="hero-left">
       <div>
         <div class="hero-eyebrow">
@@ -593,7 +612,7 @@
           <span class="hero-headline-black">Clean numbers for your next board meeting.<br></span>
           <span class="hero-headline-sienna">And every one after that.</span>
         </h1>
-        <p class="hero-subhead">Most companies at your stage have a finance function that hasn't caught up to the business. Setpoint closes that gap — model, forecast, and variance analysis, so every board meeting starts with numbers that hold up.</p>
+        <p class="hero-subhead">Most companies at your stage have a finance function that hasn't caught up to the business. Setpoint closes that gap — modeling, forecasting, and monthly planning support, so every board meeting starts with numbers that hold up.</p>
         <p class="hero-retainer">One monthly cycle. No surprises.</p>
       </div>
       <div class="hero-ctas">
@@ -614,9 +633,11 @@
       </div>
       <p class="familiar-close">That’s not a headcount problem. It’s an infrastructure problem.</p>
     </div>
+    </div>
   </section>
 
   <section class="section-warm" id="how-it-works">
+    <div class="wrap">
     <div class="section-header">
       <span class="section-label">How it works</span>
       <h2 class="section-headline">Three steps. One clean monthly cycle.</h2>
@@ -641,12 +662,14 @@
     <div class="steps-close">
       <p>Your time commitment is the inputs. The rest happens on our end.</p>
     </div>
+    </div>
   </section>
 
   <section class="section-warm" id="whats-included">
+    <div class="wrap">
     <div class="section-header">
       <span class="section-label">What you get</span>
-      <h2 class="section-headline">Defined deliverables. No surprises.</h2>
+      <h2 class="section-headline">Defined deliverables, every cycle.</h2>
     </div>
     <div class="included-grid">
       <div>
@@ -660,65 +683,91 @@
         <p class="included-col-label">Every month</p>
         <div class="included-item"><div class="included-dot"></div><span>Actuals integrated and variance analysis updated</span></div>
         <div class="included-item"><div class="included-dot"></div><span>Forecast refreshed monthly — revenue and expense</span></div>
-        <div class="included-item"><div class="included-dot"></div><span>Board and management reporting package, separated</span></div>
+        <div class="included-item"><div class="included-dot"></div><span>Board and management reporting packages</span></div>
         <div class="included-item"><div class="included-dot"></div><span>Monthly review meeting — typically an hour, sometimes less</span></div>
       </div>
+    </div>
     </div>
   </section>
 
   <section class="section-warm" id="right-fit">
+    <div class="wrap">
     <div class="section-header" style="max-width: 700px;">
       <span class="section-label">The right fit</span>
-      <h2 class="section-headline">A strong fit when the board is in the room and the finance infrastructure isn’t there yet.</h2>
+      <h2 class="section-headline">A strong fit when the board is in the room, and the finance infrastructure isn’t in place.</h2>
     </div>
     <div class="included-grid">
       <div>
         <p class="included-col-label">A strong fit when</p>
-        <div class="included-item"><div class="included-dot"></div><span>Outgrown spreadsheets, not ready for a full finance hire</span></div>
-        <div class="included-item"><div class="included-dot"></div><span>Board in the room, reporting expectations are real</span></div>
-        <div class="included-item"><div class="included-dot"></div><span>Looking for infrastructure, not strategy</span></div>
+        <div class="included-item"><div class="included-dot"></div><span>Outgrown spreadsheets, but not ready for a full-time finance hire</span></div>
+        <div class="included-item"><div class="included-dot"></div><span>Reporting has to hold up to real board scrutiny</span></div>
+        <div class="included-item"><div class="included-dot"></div><span>Wants a monthly sounding board — not just a numbers drop</span></div>
       </div>
       <div>
         <p class="included-col-label">Not a fit</p>
-        <div class="included-item"><div class="included-dot"></div><span>Pre-revenue</span></div>
+        <div class="included-item"><div class="included-dot"></div><span>Needs day-to-day bookkeeping or transactional accounting</span></div>
         <div class="included-item"><div class="included-dot"></div><span>Has in-house FP&amp;A coverage</span></div>
         <div class="included-item"><div class="included-dot"></div><span>Needs a fractional CFO or fundraising support</span></div>
       </div>
     </div>
+    </div>
   </section>
 
   <section class="section-light" id="about">
+    <div class="wrap">
     <div class="about-single">
-      <span class="section-label">About</span>
-      <div class="about-body">
-        <p>Every high-performing system has a setpoint, a value it corrects toward.<br>We exist to keep your numbers correcting toward the plan.</p>
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <span class="section-label">About</span>
+        <h2 class="section-headline">You work directly with the person doing the work.</h2>
       </div>
-      <div class="about-bio">
+      <div class="about-bio" style="margin-top: 0; padding-top: 0; border-top: none;">
         <p class="bio-name">Eric George</p>
-        <p class="bio-title">Founder, Setpoint Finance</p>
+        <p class="bio-title">Founder</p>
         <p class="about-bio-para">Led FP&A at Templafy, Shutterstock, and Medidata, taking forecast variance from double digits to under 3% at each. The work was never just the model. It was helping leadership see what was changing and what actually mattered.</p>
         <a href="https://linkedin.com/in/ericgeorgefpaleader" target="_blank" rel="noopener" class="bio-linkedin">LinkedIn →</a>
       </div>
-
+      <div class="about-body" style="margin-top: 1.75rem; padding-top: 1.75rem; border-top: 0.5px solid var(--border);">
+        <p>That’s the idea behind the name…</p>
+        <p>Every high-performing system has a setpoint — a value it corrects toward. A business is no different. Our monthly process catches issues early, while there’s still time to adjust. That’s how your business stays on track to its goals.</p>
+      </div>
+    </div>
     </div>
   </section>
 
   <footer id="footer">
-    <h2 class="footer-headline">The finance function your business deserves. Without the headcount.</h2>
-    <p class="footer-intro">Scope and pricing on a 30-minute call.</p>
+    <h2 class="footer-headline">The finance function your business deserves. <span style="color: var(--sienna);">Without the headcount.</span></h2>
+    <p class="footer-intro">30 minutes to talk through your setup and see how it works.</p>
     <a href="https://calendly.com/eric-setpointfinance/30min" target="_blank" rel="noopener" class="btn-sienna"><span>Schedule a 30-minute call →</span></a>
   </footer>
 
   <div class="footer-bar">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;">
     <span class="footer-bar-belief">eric@setpointfinance.com</span>
     <div style="display:flex;align-items:center;gap:1.5rem;">
 <div class="footer-bar-logo">
         <div style="display:flex;align-items:flex-start;gap:0;line-height:1;margin-bottom:1px;">
-          <span class="footer-bar-name">Setpoint</span><svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:1px;margin-left:2px;flex-shrink:0;"><circle cx="4.5" cy="4.5" r="3.7" fill="none" stroke="#B85C38" stroke-width="1.1"/><circle cx="4.5" cy="4.5" r="1.3" fill="#B85C38"/></svg>
+          <span class="footer-bar-name">Setpoint</span><svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:1px;margin-left:2px;flex-shrink:0;"><circle cx="4.5" cy="4.5" r="3.2" fill="#B85C38"/></svg>
         </div>
       </div>
     </div>
+    </div>
   </div>
+
+  <script>
+    (function () {
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      function onScroll() {
+        if (window.scrollY > 8) {
+          nav.classList.add('is-scrolled');
+        } else {
+          nav.classList.remove('is-scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 
 </body>
 </html>
