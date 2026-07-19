@@ -39,6 +39,8 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    p, h1, h2, h3 { text-wrap: pretty; }
+
     body::before {
       content: '';
       position: fixed;
@@ -369,7 +371,11 @@
       font-size: 12.5px;
       color: var(--light-muted);
       line-height: 1.6;
-      max-width: 260px;
+      max-width: 360px;
+    }
+
+    @media (min-width: 961px) and (max-width: 1220px) {
+      .proof-break { display: none; }
     }
 
     .proof-stats {
@@ -818,7 +824,6 @@
 
       footer { padding: 3rem 1.25rem; }
       .footer-headline { font-size: 22px; }
-      .footer-break { display: none; }
       .footer-bar {
         padding: 1.25rem 0;
         flex-direction: column;
@@ -895,7 +900,7 @@
             <path class="draw-path" d="M14,28 C42,28 52,124 82,124 C112,124 122,38 152,38 C178,38 188,80 210,80 C227,80 233,58 249,58 C272,58 295,86 372,86" fill="none" stroke="#B85C38" stroke-width="1.75" stroke-linecap="round"/>
             <circle class="draw-dot" cx="372" cy="86" r="3.5" fill="#B85C38"/>
           </svg>
-          <p class="proof-caption">Every high-performing system corrects toward a setpoint. So should yours.</p>
+          <p class="proof-caption">Every high-performing system corrects toward a setpoint. <br class="proof-break">Your business should too.</p>
         </div>
         <div class="proof-stats">
           <div>
@@ -1017,7 +1022,7 @@
       <circle cx="50" cy="50" r="32" fill="none" stroke="#F7F3EC" stroke-width="0.75"/>
       <circle cx="50" cy="50" r="12" fill="#F7F3EC"/>
     </svg>
-    <h2 class="footer-headline">The FP&amp;A function your business deserves. <br class="footer-break"><span style="color: var(--sienna);">Delivered as a managed service.</span></h2>
+    <h2 class="footer-headline">The FP&amp;A function your business deserves.</h2>
     <p class="footer-intro">30 minutes to talk through your setup and see how it works.</p>
     <a href="https://calendly.com/eric-setpointfinance/30min" target="_blank" rel="noopener" class="btn-sienna"><span>Schedule a 30-minute call →</span></a>
   </footer>
