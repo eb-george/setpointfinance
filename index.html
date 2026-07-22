@@ -668,8 +668,8 @@
     /* FOOTER */
     footer {
       background: var(--near-black);
-      padding: 4.5rem 4rem;
-      text-align: center;
+      padding: 4rem 0;
+      text-align: left;
       position: relative;
       overflow: hidden;
     }
@@ -685,28 +685,27 @@
       pointer-events: none;
     }
 
-    .footer-headline, .footer-intro, .btn-sienna {
+    .footer-cta-row, .btn-sienna {
       position: relative;
       z-index: 1;
     }
 
-    .footer-headline {
-      font-family: 'Syne', sans-serif;
-      font-size: 36px;
-      font-weight: 500;
-      color: var(--parchment);
-      letter-spacing: -0.025em;
-      line-height: 1.22;
-      max-width: 720px;
-      margin: 0 auto 1.25rem;
+    .footer-cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      max-width: 900px;
     }
 
-    .footer-intro {
-      font-size: 15px;
-      color: #8a7e6e;
-      max-width: 440px;
-      margin: 0 auto 2rem;
-      line-height: 1.8;
+    .footer-cta-text {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--parchment);
+      letter-spacing: -0.02em;
+      margin: 0;
     }
 
     .btn-sienna {
@@ -784,8 +783,8 @@
       .included-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .fit-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 
-      footer { padding: 3.5rem 2rem; }
-      .footer-headline { font-size: 30px; }
+      footer { padding: 3.5rem 0; }
+      .footer-cta-text { font-size: 24px; }
       .footer-bar { padding: 1.25rem 0; }
     }
 
@@ -822,8 +821,9 @@
       .included-item span { font-size: 14px; }
       .included-card, .fit-strong, .fit-not { padding: 1.5rem 1.5rem; }
 
-      footer { padding: 3rem 1.25rem; }
-      .footer-headline { font-size: 22px; }
+      footer { padding: 3rem 0; }
+      .footer-cta-text { font-size: 20px; }
+      .footer-cta-row { flex-direction: column; align-items: flex-start; }
       .footer-bar {
         padding: 1.25rem 0;
         flex-direction: column;
@@ -867,8 +867,8 @@
           <span class="hero-headline-black">Clean numbers for your next board meeting.<br></span>
           <span class="hero-headline-sienna">And every one after that.</span>
         </h1>
-        <p class="hero-subhead">Most growing companies have a finance function that hasn’t caught up to the business. Setpoint builds the reporting and forecasting layer and runs it, month after month, so every board meeting starts with numbers that hold up.</p>
-        <p class="hero-retainer">One monthly cycle. A fraction of a full-time hire. No surprises.</p>
+        <p class="hero-subhead">Most growing companies have a finance function that hasn’t kept pace with the business. Setpoint builds the reporting and forecasting layer and runs it, month after month, so the numbers always hold up.</p>
+        <p class="hero-retainer">One monthly cycle. Nothing off-cycle.</p>
       </div>
       <div class="hero-ctas">
         <a href="https://calendly.com/eric-setpointfinance/30min" target="_blank" rel="noopener" class="btn-primary"><span>Schedule a 30-minute call →</span></a>
@@ -1008,7 +1008,7 @@
       <div class="about-bio" style="margin-top: 0; padding-top: 0; border-top: none;">
         <p class="bio-name">Eric George</p>
         <p class="bio-title">Founder</p>
-        <p class="about-bio-para">I created Setpoint to keep leadership teams from being blindsided by their own numbers. When the close actually works, it becomes an operating advantage. Setpoint keeps that advantage running. Same process, same person, every month, start to finish.</p>
+        <p class="about-bio-para">I created Setpoint to keep leadership teams from being blindsided by their own numbers. Get the close right, and it becomes an operating advantage. Setpoint keeps that advantage running. Same process, same person, every month, start to finish.</p>
         <a href="https://linkedin.com/in/ericgeorgefpaleader" target="_blank" rel="noopener" class="bio-linkedin">LinkedIn →</a>
       </div>
     </div>
@@ -1021,9 +1021,12 @@
       <circle cx="50" cy="50" r="32" fill="none" stroke="#F7F3EC" stroke-width="0.75"/>
       <circle cx="50" cy="50" r="12" fill="#F7F3EC"/>
     </svg>
-    <h2 class="footer-headline">The FP&amp;A function your business deserves.</h2>
-    <p class="footer-intro">30 minutes to talk through your setup and see how it works.</p>
-    <a href="https://calendly.com/eric-setpointfinance/30min" target="_blank" rel="noopener" class="btn-sienna"><span>Schedule a 30-minute call →</span></a>
+    <div class="wrap">
+      <div class="footer-cta-row">
+        <p class="footer-cta-text">Get in touch.</p>
+        <a href="https://calendly.com/eric-setpointfinance/30min" target="_blank" rel="noopener" class="btn-sienna"><span>Schedule a 30-minute call</span></a>
+      </div>
+    </div>
   </footer>
 
   <div class="footer-bar">
