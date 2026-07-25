@@ -910,6 +910,8 @@
     }
 
     .shot-frame {
+      max-width: 880px;
+      margin: 0 auto;
       border: 0.5px solid var(--border);
       border-radius: 4px;
       overflow: hidden;
@@ -1064,6 +1066,24 @@
       }
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
+    })();
+
+    (function () {
+      var targets = document.querySelectorAll('.included-card, .fit-strong, .fit-not, .step, .about-single');
+      if (!targets.length) return;
+      if (!('IntersectionObserver' in window)) {
+        targets.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+      targets.forEach(function (el) { observer.observe(el); });
     })();
   </script>
 
