@@ -23,10 +23,10 @@
     html { scroll-behavior: smooth; }
 
     .wrap {
-      max-width: 1680px;
+      max-width: 960px;
       margin: 0 auto;
       width: 100%;
-      padding: 0 4rem;
+      padding: 0 3rem;
       box-sizing: border-box;
     }
 
@@ -837,69 +837,7 @@
     .sample-hero {
       background: var(--parchment);
       border-bottom: 0.5px solid var(--border);
-    }
-
-    .sample-hero-inner {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 3rem;
-      align-items: center;
-      min-height: 480px;
-    }
-
-    .sample-hero-left {
-      padding: 4rem 2.75rem 4rem 0;
-    }
-
-    .sample-hero-right {
-      padding: 3rem 0 3rem 1rem;
-      border-left: 0.5px solid var(--border);
-    }
-
-    .sample-hero-thumbs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 0.9rem;
-      height: 380px;
-    }
-
-    .sample-hero-thumb {
-      border: 0.5px solid var(--border);
-      border-radius: 3px;
-      overflow: hidden;
-      box-shadow: 0 1px 2px rgba(26,24,20,0.03), 0 8px 18px rgba(26,24,20,0.07);
-      position: relative;
-    }
-
-    .sample-hero-thumb img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .sample-hero-thumb-label {
-      position: absolute;
-      bottom: 0.5rem;
-      left: 0.5rem;
-      z-index: 1;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      color: var(--parchment);
-      background: rgba(26,24,20,0.82);
-      padding: 0.2rem 0.5rem;
-      border-radius: 2px;
-    }
-
-    @media (max-width: 960px) {
-      .sample-hero-inner { grid-template-columns: 1fr; min-height: 0; }
-      .sample-hero-left { padding: 2.5rem 0 1.5rem; }
-      .sample-hero-right { padding: 0 0 2.5rem; border-left: none; border-top: 0.5px solid var(--border); padding-top: 2rem; }
-      .sample-hero-thumbs { height: 320px; }
+      padding: 3.5rem 0 3rem;
     }
 
     .btn-workbook {
@@ -1006,22 +944,6 @@
       height: auto;
     }
 
-    .model-note {
-      font-size: 14.5px;
-      color: var(--muted);
-      line-height: 1.8;
-      max-width: 640px;
-      padding: 1rem 0 2.5rem;
-    }
-    .model-note strong {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-family: 'Syne', sans-serif;
-      font-weight: 500;
-      font-size: 17px;
-      color: var(--near-black);
-    }
-
     @media (max-width: 640px) {
       .sample-hero { padding: 3rem 0 2.5rem; }
       .sample-headline { font-size: 26px; }
@@ -1051,42 +973,20 @@
   </nav>
 
   <section class="sample-hero">
-    <div class="wrap sample-hero-inner">
-      <div class="sample-hero-left">
-        <div class="sample-eyebrow">
-          <div class="hero-eyebrow-dot"></div>
-          <span class="hero-eyebrow-text">Sample client pack</span>
-        </div>
-        <h1 class="sample-headline">Here's what a Setpoint client sees every month.</h1>
-        <p class="sample-sub">This is the real structure and depth of a monthly deliverable: board reporting, management-layer variance analysis, even the client input tab. The full file is one click away.</p>
-        <p class="sample-disclosure">NorthPeak Software is fictional, built to demonstrate the format — SaaS here, but the structure adapts to how your business actually makes money. The formulas and depth are exactly what a real client receives each month.</p>
-        <div class="sample-ctas">
-          <div>
-            <a href="setpoint-sample-client-pack.xlsx" class="btn-workbook" download><span>Open the full workbook →</span></a>
-            <p class="btn-workbook-caption">.xlsx · opens in Excel or Google Sheets</p>
-          </div>
-          <a href="https://calendly.com/eric-setpointfinance/30min" target="_blank" rel="noopener" class="btn-secondary"><span>Or schedule a 30-minute call</span></a>
-        </div>
+    <div class="wrap">
+      <div class="sample-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        <span class="hero-eyebrow-text">Sample client pack</span>
       </div>
-      <div class="sample-hero-right">
-        <div class="sample-hero-thumbs">
-          <div class="sample-hero-thumb">
-            <img src="sample-board-overview.jpg" alt="Board Overview preview">
-            <span class="sample-hero-thumb-label">Board Overview</span>
-          </div>
-          <div class="sample-hero-thumb">
-            <img src="sample-variance-analysis.jpg" alt="Variance Analysis preview">
-            <span class="sample-hero-thumb-label">Variance Analysis</span>
-          </div>
-          <div class="sample-hero-thumb">
-            <img src="sample-forecast-inputs.jpg" alt="Forecast Inputs preview">
-            <span class="sample-hero-thumb-label">Forecast Inputs</span>
-          </div>
-          <div class="sample-hero-thumb">
-            <img src="sample-pnl-quarter-outlook.jpg" alt="P&amp;L Quarter Outlook preview">
-            <span class="sample-hero-thumb-label">P&amp;L Outlook</span>
-          </div>
+      <h1 class="sample-headline">Here's what a Setpoint client sees every month.</h1>
+      <p class="sample-sub">This is the real structure and depth of a monthly deliverable: board reporting, management-layer variance analysis, even the client input tab. The full file is one click away.</p>
+      <p class="sample-disclosure">NorthPeak Software is fictional, built to demonstrate the format — SaaS here, but the structure adapts to how your business actually makes money. The formulas and depth are exactly what a real client receives each month.</p>
+      <div class="sample-ctas">
+        <div>
+          <a href="setpoint-sample-client-pack.xlsx" class="btn-workbook" download><span>Open the full workbook →</span></a>
+          <p class="btn-workbook-caption">.xlsx · opens in Excel or Google Sheets</p>
         </div>
+        <a href="https://calendly.com/eric-setpointfinance/30min" target="_blank" rel="noopener" class="btn-secondary"><span>Or schedule a 30-minute call</span></a>
       </div>
     </div>
   </section>
@@ -1111,7 +1011,15 @@
           <img src="sample-variance-analysis.jpg" alt="Setpoint Variance Analysis sample — actual versus budget with driver commentary for NorthPeak Software">
         </div>
       </div>
-      <p class="model-note"><strong>This example is SaaS-shaped — ARR, NRR, the usual. The structure isn't.</strong><br>NorthPeak's numbers run on ARR because NorthPeak is a SaaS company. Yours might not be. The reporting is built around how your business actually makes money — subscription, usage-based, services, or something in between.</p>
+      <div class="shot-block">
+        <div class="shot-caption">
+          <span class="shot-caption-label">Forecast Inputs</span>
+          <span class="shot-caption-tag">The one tab the client actually touches</span>
+        </div>
+        <div class="shot-frame">
+          <img src="sample-forecast-inputs.jpg" alt="Setpoint Forecast Inputs sample — the monthly client input tab for NorthPeak Software">
+        </div>
+      </div>
     </div>
   </section>
 
